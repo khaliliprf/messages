@@ -13,8 +13,9 @@ import { CreateMessageDto } from './dtos/create-message.dto';
 @Controller('messages')
 export class MessagesController {
   service: MessagesService;
-  constructor() {
-    this.service = new MessagesService();
+
+  constructor(service: MessagesService) {
+    this.service = service;
   }
   @Get()
   getMessages() {
